@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-    <div className="flex flex-col w-full h-12 items-center">
+    <div className="flex flex-col w-full h-12 items-center bg-local" >
       <br/>
 <Route path="/" exact component={JobsList} />
 <Route path="/edit/:id" component={EditJob} />

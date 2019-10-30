@@ -1,8 +1,8 @@
 const router = require('express').Router();
-let Jobs = require('../models/job.model');
+let Job = require('../models/job.model');
 
 router.route('/').get((req, res) => {
-  Jobs.find()
+  Job.find()
     .then(jobs => res.json(jobs))
     .catch(err => res.status(400).json('Error: ' + err));
 });
@@ -14,16 +14,33 @@ router.route('/add').post((req, res) => {
   const status = req.body.status;
   const date = Date.parse(req.body.date);
 
+  const newJobs = new Jobs({
+    company,
+    position,
+    description,
+    status,
+    date,
+  });
+
+  newJobs.save()
+  .then(() => res.json('Jobs added!'))
+  .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
+
   router.route('/:id').get((req, res) => {
   Job.findById(req.params.id)
     .then(job => res.json(job))
     .catch(err => res.status(400).json('Error: ' + err));
 });
+
 router.route('/:id').delete((req, res) => {
   Job.findByIdAndDelete(req.params.id)
     .then(() => res.json('Job deleted.'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
+
 router.route('/update/:id').post((req, res) => {
   Job.findById(req.params.id)
     .then(job => {
@@ -38,19 +55,6 @@ router.route('/update/:id').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
     })
     .catch(err => res.status(400).json('Error: ' + err));
-});
-
-  const newJobs = new Jobs({
-    company,
-    position,
-    description,
-    status,
-    date,
-  });
-
-  newJobs.save()
-  .then(() => res.json('Jobs added!'))
-  .catch(err => res.status(400).json('Error: ' + err));
 });
 
 module.exports = router;

@@ -1,0 +1,8 @@
+body, html {
+  background-image: url('https://image.freepik.com/free-vector/abstract-design-background-with-triangles-subtle-colours_1048-3068.jpg');
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: cover;
+  height: 100%; 
+
+}
