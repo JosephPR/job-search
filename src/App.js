@@ -1,15 +1,22 @@
 // src/App.js
 import React from "react";
-import Button from "./components/button";
-
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Navbar from "./components/navbar";
+import JobsList from "./components/jobs-list";
+import EditJob from "./components/edit-job";
+import CreateJob from "./components/create-job";
 function App() {
   return (
-    <div className="flex flex-col w-3/4 mx-auto my-12 items-center">
-      <h1>Super cool page</h1>
-      <Button onClick={() => console.log("I was clicked")}>
-        I am a button
-      </Button>
+    <Router>
+      <Navbar />
+    <div className="flex flex-col w-full h-12 items-center">
+      <br/>
+<Route path="/" exact component={JobsList} />
+<Route path="/edit/:id" component={EditJob} />
+<Route path="/create" component={CreateJob} />
+
     </div>
+    </Router>
   );
 }
 
