@@ -14,10 +14,10 @@ export default class Navbar extends Component {
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
           <div className="text-sm lg:flex-grow">
             <Link to="/" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-              Jobs
+              Job List
             </Link>
             <Link to="/create" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-              Create Job
+              Add Company
             </Link>
 
           </div>

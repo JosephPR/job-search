@@ -2,7 +2,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/navbar";
-import JobsList from "./components/jobs-list";
+import JobsList from "./components/Jobs/jobs-list";
 import EditJob from "./components/edit-job";
 import CreateJob from "./components/create-job";
 function App() {

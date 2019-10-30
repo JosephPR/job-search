@@ -1,26 +1,14 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import axios from 'axios';
-
-const Job = props => (
-  <tr className="bg-indigo-100 hover:bg-teal-100 hover:text-purple-900">
-    <td className="border px-4 py-2">{props.job.company}</td>
-    <td className="border px-4 py-2">{props.job.position}</td>
-    <td className="border px-4 py-2">{props.job.description}</td>
-    <td className="border px-4 py-2">{props.job.status}</td>
-    <td className="border px-4 py-2">{props.job.date.substring(0,10)}</td>
-    <td className="border px-4 py-2">
-      <Link to={`/edit/${props.job._id}`}>edit</Link> | <a href="/" onClick={() => { props.deleteJob(props.job._id) }}>delete</a>
-    </td>
-  </tr>
-)
-
+import  { JobList } from './job-list';
+import { SearchBox } from './searchbox';
 
 export default class JobsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      jobs: []
+      jobs: [],
+      searchField: ''
     };
   }
 
@@ -40,15 +28,24 @@ export default class JobsList extends Component {
     })
   }
 
-  jobList =() => {
-  return this.state.jobs.map(currentjob => {
-    return <Job job={currentjob} deleteJob={this.deleteJob} key={currentjob._id}/>;
-  })
-}
+
+  handleChange = (e) => {
+    this.setState({ searchField: e.target.value })
+  }
+
 
   render() {
-    return (<div>
-      <h3 className= "flex flex-col w-full h-12 items-center" >Logged Jobs</h3>
+    const { jobs, searchField } = this.state;
+    const filteredJobs = jobs.filter(job =>
+        job.company.toLowerCase().includes(searchField.toLowerCase())
+      )
+        return (
+      <div  className= "flex flex-col w-full h-12 items-center">
+      <h3  >Logged Jobs</h3>
+        <SearchBox
+             placeholder="Search Company's"
+             handleChange={this.handleChange}
+               />
       <table className="table-auto">
         <thead>
           <tr>
@@ -59,9 +56,7 @@ export default class JobsList extends Component {
             <th className="px-4 py-2 text-indigo-900">Date</th>
           </tr>
         </thead>
-        <tbody>
-          {this.jobList()}
-        </tbody>
+        <JobList jobs={filteredJobs} />
       </table>
     </div>)
   }
