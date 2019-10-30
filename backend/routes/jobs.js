@@ -14,7 +14,7 @@ router.route('/add').post((req, res) => {
   const status = req.body.status;
   const date = Date.parse(req.body.date);
 
-  const newJobs = new Jobs({
+  const newJobs = new Job({
     company,
     position,
     description,
