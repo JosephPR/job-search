@@ -4,45 +4,37 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
 
 export default class CreateJob extends Component {
-  constructor(props) {
-    super(props);
-      this.state = {
+      state = {
         company: '',
         position: '',
         description: '',
         status: '',
         date: new Date(),
         jobs: []
-  }
-}
+      }
 
-componentDidMount() {
-  this.setState({
-    jobs: ['test user'],
-    company: ''
-  });
-}
 
 handleChange = (e) => {
   this.setState({
-  [e.target.name]:e.target.value
+  [e.target.name]: e.target.value
   });
 }
 
 handleDateChange = (date) => {
   this.setState({
-    date: date
+    date
   });
 }
 
 onSubmit = (e) => {
   e.preventDefault();
+  const {company, position, description, status, date} = this.state
   const job = {
-    company: this.state.company,
-    position: this.state.position,
-    description: this.state.description,
-    status: this.state.status,
-    date: this.state.date,
+    company,
+    position,
+    description,
+    status,
+    date,
   };
 console.log(job);
 
@@ -53,6 +45,7 @@ window.location = '/';
 }
 
   render() {
+    const {company, position, description, status, date} = this.state;
     return (
       <div className= "flex flex-col w-full h-12 items-center">
        <h3>Create New Job Log</h3>
@@ -63,7 +56,7 @@ window.location = '/';
                required
                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
                name='company'
-               value={this.state.company}
+               value={company}
                onChange={this.handleChange}>
 
            </input>
@@ -75,7 +68,7 @@ window.location = '/';
                type="text"
                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
                name='position'
-               value={this.state.position}
+               value={position}
                onChange={this.handleChange}
                />
          </div>
@@ -85,7 +78,7 @@ window.location = '/';
                required
                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
                name='description'
-               value={this.state.description}
+               value={description}
                onChange={this.handleChange}
                />
          </div>
@@ -95,7 +88,7 @@ window.location = '/';
                required
                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
                name='status'
-               value={this.state.status}
+               value={status}
                onChange={this.handleChange}
                />
          </div>
@@ -105,7 +98,7 @@ window.location = '/';
              <DatePicker
              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
 
-               selected={this.state.date}
+               selected={date}
                onChange={this.handleDateChange}
              />
            </div>
