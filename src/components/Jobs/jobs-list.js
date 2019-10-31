@@ -33,6 +33,12 @@ export default class JobsList extends Component {
     this.setState({ searchField: e.target.value })
   }
 
+  onSort = (event, sortKey) => {
+
+    const jobs = this.state.jobs;
+    jobs.sort((a,b) => a[sortKey].localeCompare(b[sortKey]))
+    this.setState({jobs})
+  }
 
   render() {
     const { jobs, searchField } = this.state;
@@ -49,11 +55,11 @@ export default class JobsList extends Component {
       <table className="table-auto">
         <thead>
           <tr>
-            <th className="px-4 py-2 text-indigo-900">Company</th>
+            <th onClick={e => this.onSort(e, 'company')} className="px-4 py-2 text-indigo-900 hover:text-purple-600 ">Company</th>
             <th className="px-4 py-2 text-indigo-900">Position</th>
             <th className="px-4 py-2 text-indigo-900">Description</th>
-            <th className="px-4 py-2 text-indigo-900">Status</th>
-            <th className="px-4 py-2 text-indigo-900">Date</th>
+            <th onClick={e => this.onSort(e, 'status')} className="px-4 py-2 text-indigo-900 hover:text-purple-600" >Status</th>
+            <th onClick={e => this.onSort(e, 'date')} className="px-4 py-2 text-indigo-900 hover:text-purple-600">Date</th>
           </tr>
         </thead>
         <JobList jobs={filteredJobs} />
