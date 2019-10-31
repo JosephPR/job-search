@@ -54,7 +54,7 @@ window.location = '/';
            <label className="block text-indigo-800 font-bold  mb-1 md:mb-0 pr-4" htmlFor="inline-company">Company: </label>
            <input
                required
-               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
+               className="bg-teal-100 appearance-none border-2 border-teal-100 rounded w-full py-2 px-4 text-indigo-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
                name='company'
                value={company}
                onChange={this.handleChange}>
@@ -66,7 +66,7 @@ window.location = '/';
            <label className="block text-indigo-800 font-bold  mb-1 md:mb-0 pr-4" htmlFor="inline-position">Position: </label>
            <input
                type="text"
-               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
+               className="bg-teal-100 appearance-none border-2 border-teal-100 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
                name='position'
                value={position}
                onChange={this.handleChange}
@@ -76,7 +76,7 @@ window.location = '/';
            <label  className="block text-indigo-800 font-bold  mb-1 md:mb-0 pr-4" htmlFor="inline-description">Description: </label>
            <input  type="text"
                required
-               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
+               className="bg-teal-100 appearance-none border-2 border-teal-100 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
                name='description'
                value={description}
                onChange={this.handleChange}
@@ -86,7 +86,7 @@ window.location = '/';
            <label  className="block text-indigo-800 font-bold  mb-1 md:mb-0 pr-4" htmlFor="inline-description">Status: </label>
            <input  type="text"
                required
-               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
+               className="bg-teal-100 appearance-none border-2 border-teal-100 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
                name='status'
                value={status}
                onChange={this.handleChange}
@@ -96,7 +96,7 @@ window.location = '/';
            <label className="block text-indigo-800 font-bold  mb-1 md:mb-0 pr-4" htmlFor="inline-position">Date: </label>
            <div>
              <DatePicker
-             className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
+             className="bg-teal-100 appearance-none border-2 border-teal-100 rounded w-full py-2 px-4 text-grey-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
 
                selected={date}
                onChange={this.handleDateChange}
@@ -104,7 +104,7 @@ window.location = '/';
            </div>
            <br/>
 
-           <input type="submit" value="Create Job Log" className="px-2 py-1 rounded-lg bg-indigo-800 hover:bg-indigo-700 opacity-75  text-yellow-200 hover:text-yellow-400 text-xl font-light uppercase shadow-md hover:shadow-lg" />
+           <input type="submit" value="Create Job Log" className="px-2 py-1 rounded-lg bg-indigo-800 hover:bg-indigo-700 opacity-75  text-yellow-100 hover:text-yellow-400 text-xl font-light uppercase shadow-md hover:shadow-lg" />
        </form>
      </div>
     )

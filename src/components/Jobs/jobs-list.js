@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import  { JobList } from './job-list';
 import { SearchBox } from './searchbox';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSortAlphaDown, faSortNumericDown } from '@fortawesome/free-solid-svg-icons'
 
 export default class JobsList extends Component {
   constructor(props) {
@@ -55,14 +57,14 @@ export default class JobsList extends Component {
       <table className="table-auto">
         <thead>
           <tr>
-            <th onClick={e => this.onSort(e, 'company')} className="px-4 py-2 text-indigo-900 hover:text-purple-600 ">Company</th>
+            <th onClick={e => this.onSort(e, 'company')} className="px-4 py-2 text-indigo-900 hover:text-purple-600 "><FontAwesomeIcon  className="text-indigo-900" icon={faSortAlphaDown} /> Company</th>
             <th className="px-4 py-2 text-indigo-900">Position</th>
             <th className="px-4 py-2 text-indigo-900">Description</th>
-            <th onClick={e => this.onSort(e, 'status')} className="px-4 py-2 text-indigo-900 hover:text-purple-600" >Status</th>
-            <th onClick={e => this.onSort(e, 'date')} className="px-4 py-2 text-indigo-900 hover:text-purple-600">Date</th>
+            <th onClick={e => this.onSort(e, 'status')} className="px-4 py-2 text-indigo-900 hover:text-purple-600" ><FontAwesomeIcon  className="text-indigo-900" icon={faSortAlphaDown} /> Status</th>
+            <th onClick={e => this.onSort(e, 'date')} className="px-4 py-2 text-indigo-900 hover:text-purple-600"><FontAwesomeIcon  className="text-indigo-900" icon={faSortNumericDown} /> Date</th>
           </tr>
         </thead>
-        <JobList jobs={filteredJobs} />
+        <JobList jobs={filteredJobs} deleteJob={this.deleteJob} />
       </table>
     </div>)
   }

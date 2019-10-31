@@ -72,7 +72,7 @@ window.location = '/';
            <label className="block text-indigo-800 font-bold  mb-1 md:mb-0 pr-4" htmlFor="inline-company">Company: </label>
            <input
                required
-               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
+               className="bg-teal-100 appearance-none border-2 border-teal-100 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
                name='company'
                value={company}
                onChange={this.handleChange}>
@@ -84,7 +84,7 @@ window.location = '/';
            <label className="block text-indigo-800 font-bold  mb-1 md:mb-0 pr-4" htmlFor="inline-position">Position: </label>
            <input
                type="text"
-               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
+               className="bg-teal-100 appearance-none border-2 border-teal-100 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
                name='position'
                value={position}
                onChange={this.handleChange}
@@ -94,7 +94,7 @@ window.location = '/';
            <label  className="block text-indigo-800 font-bold  mb-1 md:mb-0 pr-4" htmlFor="inline-description">Description: </label>
            <input  type="text"
                required
-               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
+               className="bg-teal-100 appearance-none border-2 border-teal-100 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
                name='description'
                value={description}
                onChange={this.handleChange}
@@ -104,7 +104,7 @@ window.location = '/';
            <label  className="block text-indigo-800 font-bold  mb-1 md:mb-0 pr-4" htmlFor="inline-description">Status: </label>
            <input  type="text"
                required
-               className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
+               className="bg-teal-100 appearance-none border-2 border-teal-100 rounded w-full py-2 px-4 text-indigo-800 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
                name='status'
                value={status}
                onChange={this.handleChange}
@@ -114,7 +114,7 @@ window.location = '/';
            <label className="block text-indigo-800 font-bold  mb-1 md:mb-0 pr-4" htmlFor="inline-position">Date: </label>
            <div>
              <DatePicker
-             className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
+             className="bg-teal-100 appearance-none border-2 border-teal-100 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-800"
 
                selected={date}
                onChange={this.handleDateChange}
