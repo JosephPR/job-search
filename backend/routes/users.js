@@ -7,23 +7,7 @@ const keys = require("../config/keys");
 
 let User = require('../models/user.model');
 
-router.route('/').get((req, res) => {
-  User.find()
-    .then(users => res.json(users))
-    .catch(err => res.status(400).json('Error: ' + err));
-});
-
-router.route('/add').post((req, res) => {
-  const username = req.body.name;
-
-  const newUser = new User({name});
-
-  newUser.save()
-    .then(() => res.json('User added!'))
-    .catch(err => res.status(400).json('Error: ' + err));
-});
-
-// @route POST api/users/register
+// @route POST /users/register
 // @desc Register user
 // @access Public
 router.post("/register", (req, res) => {
@@ -57,7 +41,7 @@ User.findOne({ email: req.body.email }).then(user => {
   });
 });
 
-// @route POST api/users/login
+// @route POST /users/login
 // @desc Login user and return JWT token
 // @access Public
 router.post("/login", (req, res) => {
