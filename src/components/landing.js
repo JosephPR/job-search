@@ -4,6 +4,7 @@ class Landing extends Component {
   render() {
     return (
       <div className= "flex flex-col w-full items-center">
+            <img src="/big-eye.png" className="fill-current h-15 w-15" alt="eye"/>
             <h2 className="text-2xl font-serif items-center text-center">Welcome to the place for all you job tracking needs!<br />
              <br /> Sort and filter all of your applications by company, status or date applied.<br /> <br /> Sign in or register to get started. </h2>
             <br />

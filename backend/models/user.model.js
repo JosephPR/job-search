@@ -6,13 +6,11 @@ const userSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true
 
   },
   email: {
    type: String,
    required: true,
-   unique: true
  },
  password: {
    type: String,
@@ -21,7 +19,12 @@ const userSchema = new Schema({
  date: {
     type: Date,
     default: Date.now
-  }
+  },
+  moderator: {
+    type: mongoose.Schema.Types.ObjectId,
+     ref: 'User'
+   },
+
 },
  {
   timestamps: true,
