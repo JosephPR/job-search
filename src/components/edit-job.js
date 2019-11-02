@@ -59,7 +59,7 @@ console.log(job);
 axios.post(`http://localhost:5000/jobs/update/${this.props.match.params.id}`, job)
   .then(res => console.log(res.data));
 
-window.location = '/';
+window.location = '/jobs';
 }
 
   render() {
