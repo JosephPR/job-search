@@ -1,4 +1,3 @@
-// src/App.js
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -47,10 +46,10 @@ export default class App extends Component{
       <div className="flex flex-col w-full h-12 items-center bg-local" >
         <br/>
   <Route exact path="/" component={Landing} />
-  <Route exact path="/edit/:id" component={EditJob} />
   <Route exact path="/register" component={Register} />
   <Route exact path="/login" component={Login} />
   <Switch>
+      <PrivateRoute exact path="/edit/:id" component={EditJob} />
       <PrivateRoute exact path="/dashboard" component={Dashboard} />
       <PrivateRoute exact path="/jobs" component={JobsList} />
       <PrivateRoute exact path="/create" component={CreateJob} />

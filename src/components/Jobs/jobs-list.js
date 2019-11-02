@@ -36,7 +36,6 @@ export default class JobsList extends Component {
   }
 
   onSort = (event, sortKey) => {
-
     const jobs = this.state.jobs;
     jobs.sort((a,b) => a[sortKey].localeCompare(b[sortKey]))
     this.setState({jobs})
@@ -48,8 +47,8 @@ export default class JobsList extends Component {
         job.company.toLowerCase().includes(searchField.toLowerCase())
       )
         return (
-      <div  className= "flex flex-col w-full h-12 items-center">
-      <h3  >Logged Jobs</h3>
+      <div className= "flex flex-col w-full h-12 items-center">
+      <h3>Logged Jobs</h3>
         <SearchBox
              placeholder="Search Company's"
              handleChange={this.handleChange}
