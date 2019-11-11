@@ -11,7 +11,7 @@ import store from "./store";
 import Navbar from "./components/navbar";
 import JobsList from "./components/Jobs/jobs-list";
 import EditJob from "./components/edit-job";
-import Landing from "./components/landing"
+import Landing from "./components/landing";
 import CreateJob from "./components/create-job";
 import Register from "./components/auth/register";
 import Login from "./components/auth/login";
@@ -27,7 +27,7 @@ if (localStorage.jwtToken) {
   const decoded = jwt_decode(token);
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
-// Check for expired token
+  // Check for expired token
   const currentTime = Date.now() / 1000; // to get in milliseconds
   if (decoded.exp < currentTime) {
     // Logout user
@@ -37,27 +37,26 @@ if (localStorage.jwtToken) {
   }
 }
 
-export default class App extends Component{
-  render(){
+export default class App extends Component {
+  render() {
     return (
-    <Provider store={store}>
-      <Router>
-        <Navbar />
-      <div className="flex flex-col w-full h-12 items-center bg-local" >
-        <br/>
-  <Route exact path="/" component={Landing} />
-  <Route exact path="/register" component={Register} />
-  <Route exact path="/login" component={Login} />
-  <Switch>
-      <PrivateRoute exact path="/edit/:id" component={EditJob} />
-      <PrivateRoute exact path="/dashboard" component={Dashboard} />
-      <PrivateRoute exact path="/jobs" component={JobsList} />
-      <PrivateRoute exact path="/create" component={CreateJob} />
-  </Switch>
-      </div>
-      </Router>
-    </Provider>
-
+      <Provider store={store}>
+        <Router>
+          <Navbar />
+          <div className="flex flex-col w-full h-12 items-center bg-local">
+            <br />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <Switch>
+              <PrivateRoute exact path="/edit/:id" component={EditJob} />
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/jobs" component={JobsList} />
+              <PrivateRoute exact path="/create" component={CreateJob} />
+            </Switch>
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }

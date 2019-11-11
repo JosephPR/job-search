@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/users");
+const path = require("path");
 
 require('dotenv').config();
 
@@ -19,6 +20,7 @@ app.use(
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "client/build")))
 
 const uri = process.env.ATLAS_URI;
 
