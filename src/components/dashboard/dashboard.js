@@ -15,10 +15,10 @@ class Dashboard extends Component {
         <div className="">
           <div className="inline-flex items-center justify-center">
             <h4 className="text-2xl font-serif items-center text-center">
-              <b>Hey there,</b>
-              {user.name}!
+              <b>Hey there, </b>{user.name}!
+
               <p className="flow-text grey-text text-darken-1">
-                Your Logged in,
+                You're Logged in,
                 <br />
                 Add a company to your job List!
               </p>

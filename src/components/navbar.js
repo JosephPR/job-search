@@ -9,13 +9,14 @@ export default class Navbar extends Component {
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <img src="/big-eye.png" className="fill-current h-10 w-10 mr-2" alt="eye"/>
           <Link to="/"><span className="font-semibold text-xl tracking-tight text-teal-300">Job Eye</span></Link>
-        </div>
-
-        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div className="text-sm lg:flex-grow ">
+          <div className='pl-4'>
             <Link to="/jobs" className="block mt-4 lg:inline-block text-lg lg:mt-0 text-teal-200 hover:text-white mr-4">
               Job List
             </Link>
+            </div>
+        </div>
+        <div className="justify-end pl-3w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+          <div className="text-sm">
             <Link to="/create" className="block mt-4 lg:inline-block lg:mt-0 text-lg text-teal-200 hover:text-white mr-4">
               Add Company
             </Link>
